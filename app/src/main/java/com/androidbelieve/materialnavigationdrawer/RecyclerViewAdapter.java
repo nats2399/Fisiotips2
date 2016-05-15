@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +16,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     String[] titles;
     TypedArray icons;
     Context context;
+    Toolbar toolbar;
 
    // The default constructor to receive titles,icons and context from MainActivity.
-   RecyclerViewAdapter(String[] titles , TypedArray icons , Context context){
+   RecyclerViewAdapter(String[] titles , TypedArray icons , Context context,Toolbar toolbar){
 
             this.titles = titles;
             this.icons = icons;
             this.context = context;
+            this.toolbar = toolbar;
     }
 
    /**
@@ -66,16 +69,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     Fragment tableFragmentt = new TableFragment2();
                     fragmentTransaction.replace(R.id.containerView,tableFragmentt);
                     fragmentTransaction.commit();
+                    toolbar.setTitle("Bienvenido");
                     break;
                 case 2:
                     Fragment fixtureFragment = new FixtureFragment();
                     fragmentTransaction.replace(R.id.containerView,fixtureFragment);
                     fragmentTransaction.commit();
+                    toolbar.setTitle("Introducción");
                     break;
                 case 3:
                     Fragment tableFragment = new TableFragment();
                     fragmentTransaction.replace(R.id.containerView,tableFragment);
                     fragmentTransaction.commit();
+                    toolbar.setTitle("Rutina Diaria");
+                    break;
+                case 4:
+                    Fragment introFragment = new IntroFragment();
+                    fragmentTransaction.replace(R.id.containerView,introFragment);
+                    fragmentTransaction.commit();
+                    toolbar.setTitle("Ejercicios");
+                    break;
+                case 5:
+                    Fragment agraFragment = new Agradecidos();
+                    fragmentTransaction.replace(R.id.containerView,agraFragment);
+                    fragmentTransaction.commit();
+                    toolbar.setTitle("Agradecimientos");
                     break;
             }
         }

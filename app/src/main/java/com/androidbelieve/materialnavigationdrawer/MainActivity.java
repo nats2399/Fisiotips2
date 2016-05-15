@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         *So that , later we can use the fragmentManager of this activity to add/replace fragments.
         */
 
-        recyclerViewAdapter = new RecyclerViewAdapter(navTitles,navIcons,this);
+        recyclerViewAdapter = new RecyclerViewAdapter(navTitles,navIcons,this,toolbar);
         recyclerView.setAdapter(recyclerViewAdapter);
 
         /**
