@@ -4,12 +4,36 @@
     android:layout_height="match_parent">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SQUAD\nFRAGMENT"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:id="@+id/tvSquad"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/tvSquad"
+        android:layout_margin="15dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:autoLink="web"
+        android:textColorLink="@android:color/holo_orange_dark"
+        android:textSize="17sp"
+        android:text="www.androidbelieve.com"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageViewicon"
         android:layout_gravity="center"
         android:src="@mipmap/iconito" />
-
 
 </RelativeLayout>
