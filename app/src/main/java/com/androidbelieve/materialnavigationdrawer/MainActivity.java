@@ -64,10 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Add the Very First i.e Squad Fragment to the Container
         //Fragment squadFragment = new SquadFragment();
-        Fragment introFragment = new IntroFragment();
+        Fragment welcfragment = new WelcomeFragment();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.containerView,introFragment,null);
+        fragmentTransaction.replace(R.id.containerView,welcfragment,null);
         fragmentTransaction.commit();
 
 

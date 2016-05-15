@@ -66,20 +66,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             switch (getPosition()){
                 case 1:
                     //Fragment squadFragment = new SquadFragment();
-                    Fragment tableFragmentt = new TableFragment2();
-                    fragmentTransaction.replace(R.id.containerView,tableFragmentt);
+                    Fragment wf = new WelcomeFragment();
+                    //Fragment introFragment = new IntroFragment();
+                    fragmentTransaction.replace(R.id.containerView,wf);
                     fragmentTransaction.commit();
                     toolbar.setTitle("Bienvenido");
                     break;
                 case 2:
-                    Fragment fixtureFragment = new FixtureFragment();
-                    fragmentTransaction.replace(R.id.containerView,fixtureFragment);
+                    Fragment iff = new IntroFragment();
+                    fragmentTransaction.replace(R.id.containerView,iff);
                     fragmentTransaction.commit();
                     toolbar.setTitle("Introducción");
                     break;
                 case 3:
-                    Fragment tableFragment = new TableFragment();
-                    fragmentTransaction.replace(R.id.containerView,tableFragment);
+                    Fragment rdf = new TableFragment();
+                    fragmentTransaction.replace(R.id.containerView,rdf);
                     fragmentTransaction.commit();
                     toolbar.setTitle("Rutina Diaria");
                     break;
@@ -95,6 +96,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     fragmentTransaction.commit();
                     toolbar.setTitle("Agradecimientos");
                     break;
+                case 4:
+                    Fragment ef = new TableFragment();
+                    fragmentTransaction.replace(R.id.containerView,ef);
+                    fragmentTransaction.commit();
+                    break;
+                case 5:
+                    Fragment af = new TableFragment();
+                    fragmentTransaction.replace(R.id.containerView,af);
+                    fragmentTransaction.commit();
+                    break;
+
+
             }
         }
     }

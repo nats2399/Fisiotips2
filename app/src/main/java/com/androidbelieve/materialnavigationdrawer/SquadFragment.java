@@ -8,9 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Ratan on 7/9/2015.
- */
+
 public class SquadFragment extends android.support.v4.app.Fragment {
 
     @Nullable
