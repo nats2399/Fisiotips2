@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -62,12 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Add the Very First i.e Squad Fragment to the Container
-        Fragment squadFragment = new SquadFragment();
+        //Fragment squadFragment = new SquadFragment();
         Fragment introFragment = new IntroFragment();
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.containerView,introFragment,null);
         fragmentTransaction.commit();
+
 
     }
 

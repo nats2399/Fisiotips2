@@ -62,8 +62,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             switch (getPosition()){
                 case 1:
-                    Fragment squadFragment = new SquadFragment();
-                    fragmentTransaction.replace(R.id.containerView,squadFragment);
+                    //Fragment squadFragment = new SquadFragment();
+                    Fragment tableFragmentt = new TableFragment2();
+                    fragmentTransaction.replace(R.id.containerView,tableFragmentt);
                     fragmentTransaction.commit();
                     break;
                 case 2:
@@ -81,7 +82,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
    /**
-    *This is called every time when we need a new ViewHolder and a new ViewHolder is required for every item in RecyclerView.
+    *This is calledï¿½every timeï¿½when we need a new ViewHolder and a new ViewHolder is required for every item in RecyclerView.
     *Then this ViewHolder is passed to onBindViewHolder to display items.
     */
 
@@ -105,7 +106,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
    /**
-    *This method is called by RecyclerView.Adapter to display the data at the specified position. 
+    *This method is called by RecyclerView.Adapter to display the data at the specified position.ï¿½
     *This method should update the contents of the itemView to reflect the item at the given position.
     *So here , if position!=0 it implies its a row_item and we set the title and icon of the view.
     */
