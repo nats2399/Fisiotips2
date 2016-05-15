@@ -1,27 +1,36 @@
 package com.androidbelieve.materialnavigationdrawer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link IntroFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link IntroFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class IntroFragment extends android.support.v4.app.Fragment {
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View view =  inflater.inflate(R.layout.fragment_intro, container, false);
+
+        ImageView iconito = (ImageView) view.findViewById(R.id.imageViewicon);
+
 
         return inflater.inflate(R.layout.fragment_intro,null);
 
 
     }
+
+
+
+
 }
