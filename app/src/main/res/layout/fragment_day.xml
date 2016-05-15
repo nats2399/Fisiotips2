@@ -1,0 +1,115 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.androidbelieve.materialnavigationdrawer.DayFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="#ffffff">
+
+
+        <TableLayout
+            android:layout_width="343dp"
+            android:layout_height="526dp"
+            android:layout_gravity="center_horizontal|top">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Ejercicio1"
+                    android:id="@+id/Ejercicio1"
+                    android:layout_column="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Ejercicio2"
+                    android:id="@+id/Ejercicio2"
+                    android:layout_column="3"
+                    android:layout_marginLeft="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView android:id="@+id/ejercicio1img"
+                    android:layout_column="1"
+                    android:src="@mipmap/defaultimg" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ejercicio2img"
+                    android:src="@mipmap/defaultimg"
+                    android:layout_column="3"
+                    android:layout_marginLeft="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Ejercicio3"
+                    android:id="@+id/Ejercicio3"
+                    android:layout_column="1"
+                    android:layout_marginTop="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Ejercicio4"
+                    android:id="@+id/Ejercicio4"
+                    android:layout_column="3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView android:id="@+id/ejercicio3img"
+                    android:layout_column="1"
+                    android:src="@mipmap/defaultimg" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ejercicio4img"
+                    android:src="@mipmap/defaultimg"
+                    android:layout_column="3"
+                    android:layout_marginLeft="10dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/diatexto"
+                    android:id="@+id/textView"
+                    android:layout_column="1"
+                    android:layout_marginTop="10dp" />
+            </TableRow>
+        </TableLayout>
+    </FrameLayout>
+
+</FrameLayout>

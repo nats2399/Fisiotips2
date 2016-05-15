@@ -27,6 +27,17 @@
 
     <string name="button1">¿Cómo desarrollar este programa?</string>
     <string name="button2">Variaciones de los ejercicios</string>
+    <string name="button3">Calentamiento</string>
+    <string name="button4">Estiramiento</string>
+
+
+    <string name="text1">Ejercicios</string>
+    <string name="text2">Día 1</string>
+    <string name="text3">Día 2</string>
+    <string name="text4">Día 3</string>
+    <string name="text5">Día 4</string>
+    <string name="text6">Día 5</string>
+    <string name="diatexto">10-20 repeticiones</string>
 
 
 </resources>
