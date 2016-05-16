@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +16,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     String[] titles;
     TypedArray icons;
     Context context;
+    Toolbar toolbar;
 
    // The default constructor to receive titles,icons and context from MainActivity.
-   RecyclerViewAdapter(String[] titles , TypedArray icons , Context context){
+   RecyclerViewAdapter(String[] titles , TypedArray icons , Context context,Toolbar toolbar){
 
             this.titles = titles;
             this.icons = icons;
             this.context = context;
+            this.toolbar = toolbar;
     }
 
    /**
@@ -37,6 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView  navTitle;
         ImageView navIcon;
         Context context;
+        DBHandler db;
 
         public ViewHolder(View drawerItem , int itemType , Context context){
 
@@ -48,6 +52,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 navIcon = (ImageView) itemView.findViewById(R.id.iv_NavIcon);
             }
         }
+
+       public void getDB (DBHandler db)
+       {
+           this.db = db;
+       }
 
        /**
         *This defines onClick for every item with respect to its position.
@@ -67,26 +76,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     //Fragment introFragment = new IntroFragment();
                     fragmentTransaction.replace(R.id.containerView,wf);
                     fragmentTransaction.commit();
+                    toolbar.setTitle("Bienvenido");
                     break;
                 case 2:
                     Fragment iff = new IntroFragment();
                     fragmentTransaction.replace(R.id.containerView,iff);
                     fragmentTransaction.commit();
+                    toolbar.setTitle("Introducción");
                     break;
                 case 3:
                     Fragment rdf = new RutinaFragment();
                     fragmentTransaction.replace(R.id.containerView,rdf);
                     fragmentTransaction.commit();
+                    toolbar.setTitle("Rutina Diaria");
                     break;
                 case 4:
                     Fragment ef = new EjerciciosFragment();
                     fragmentTransaction.replace(R.id.containerView,ef);
                     fragmentTransaction.commit();
+                    toolbar.setTitle("Ejercicios");
                     break;
                 case 5:
                     Fragment af = new AgradecimientosFragment();
                     fragmentTransaction.replace(R.id.containerView,af);
                     fragmentTransaction.commit();
+                    toolbar.setTitle("Agradecimientos");
                     break;
 
 

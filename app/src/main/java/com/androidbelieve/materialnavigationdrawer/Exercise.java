@@ -1,4 +1,4 @@
-package com.fisiotips.unisabana.fisiotips;
+package com.androidbelieve.materialnavigationdrawer;
 
 /**
  * Created by nRamirezP on 5/13/16.
