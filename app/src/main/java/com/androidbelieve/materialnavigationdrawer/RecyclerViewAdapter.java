@@ -40,6 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView  navTitle;
         ImageView navIcon;
         Context context;
+        DBHandler db;
 
         public ViewHolder(View drawerItem , int itemType , Context context){
 
@@ -51,6 +52,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 navIcon = (ImageView) itemView.findViewById(R.id.iv_NavIcon);
             }
         }
+
+       public void getDB (DBHandler db)
+       {
+           this.db = db;
+       }
 
        /**
         *This defines onClick for every item with respect to its position.

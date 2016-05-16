@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.androidbelieve.materialnavigationdrawer.DesEjerciciosFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageEx"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/descripcion"
+        android:layout_gravity="center"
+        android:textColor="#69a03a"
+        android:textAlignment="center"
+        android:width="@dimen/notification_large_icon_width"
+        android:visibility="visible"
+        android:gravity="top|center_vertical|center_horizontal"
+        android:layout_marginLeft="0dp"
+        android:layout_alignBottom="@+id/imageEx"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/repeticiones"
+        android:layout_gravity="center"
+        android:textColor="#69a03a"
+        android:textAlignment="center"
+        android:width="@dimen/notification_large_icon_width"
+        android:visibility="visible"
+        android:gravity="top|center_vertical|center_horizontal"
+        android:layout_marginLeft="0dp"
+        android:layout_alignTop="@+id/descripcion"
+        android:layout_alignParentEnd="true"
+        android:text="12 repeticiosnes" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tip"
+        android:layout_gravity="center"
+        android:textColor="#69a03a"
+        android:textAlignment="center"
+        android:width="@dimen/notification_large_icon_width"
+        android:visibility="visible"
+        android:gravity="top|center_vertical|center_horizontal"
+        android:layout_marginLeft="0dp"
+        android:layout_below="@+id/imageEx"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
