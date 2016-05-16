@@ -76,31 +76,31 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     //Fragment introFragment = new IntroFragment();
                     fragmentTransaction.replace(R.id.containerView,wf);
                     fragmentTransaction.commit();
-                    toolbar.setTitle("Bienvenido");
+                    toolbar.setTitle(titles[0]);
                     break;
                 case 2:
                     Fragment iff = new IntroFragment();
                     fragmentTransaction.replace(R.id.containerView,iff);
                     fragmentTransaction.commit();
-                    toolbar.setTitle("Introducción");
+                    toolbar.setTitle(titles[1]);
                     break;
                 case 3:
                     Fragment rdf = new RutinaFragment();
                     fragmentTransaction.replace(R.id.containerView,rdf);
                     fragmentTransaction.commit();
-                    toolbar.setTitle("Rutina Diaria");
+                    toolbar.setTitle(titles[2]);
                     break;
                 case 4:
                     Fragment ef = new EjerciciosFragment();
                     fragmentTransaction.replace(R.id.containerView,ef);
                     fragmentTransaction.commit();
-                    toolbar.setTitle("Ejercicios");
+                    toolbar.setTitle(titles[3]);
                     break;
                 case 5:
                     Fragment af = new AgradecimientosFragment();
                     fragmentTransaction.replace(R.id.containerView,af);
                     fragmentTransaction.commit();
-                    toolbar.setTitle("Agradecimientos");
+                    toolbar.setTitle(titles[4]);
                     break;
 
 
