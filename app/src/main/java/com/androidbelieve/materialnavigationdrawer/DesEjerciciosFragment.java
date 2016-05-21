@@ -33,23 +33,10 @@ public class DesEjerciciosFragment extends Fragment {
         tvTip.setText(tip);
 
 
-        Drawable laquees = this.traedDrawable(imagen);
-
         ImageView imageVw = (ImageView) view.findViewById(R.id.imageEx);
-
-        imageVw.setImageDrawable(laquees);
 
 
         return inflater.inflate(R.layout.fragment_welcome,null);
-
-    }
-
-    private Drawable traedDrawable(String imagen)
-    {
-        if(imagencitas == null)
-        {
-            imagencitas = new ArrayList<>();
-        }
 
     }
 

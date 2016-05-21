@@ -12,16 +12,10 @@ import android.view.ViewGroup;
 
 public class RutinaFragment extends android.support.v4.app.Fragment {
 
-    DBHandler db;
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState,DBHandler db)
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        this.db = db;
+
         return inflater.inflate(R.layout.fragment_rutina,null);
 
     }
-
-
-
-
 }

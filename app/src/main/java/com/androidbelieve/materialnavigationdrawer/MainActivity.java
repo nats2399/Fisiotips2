@@ -21,13 +21,14 @@ public class MainActivity extends AppCompatActivity {
     TypedArray navIcons;
     RecyclerView.Adapter recyclerViewAdapter;
     ActionBarDrawerToggle drawerToggle;
+    DBHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DBHandler db = new DBHandler(this);
+        db = new DBHandler(this);
         if(db.traeEjercicio(40)==null)
             this.quemadura(db);
 
