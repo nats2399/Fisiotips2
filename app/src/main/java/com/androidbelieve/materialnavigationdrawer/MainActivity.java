@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         if(db.traeEjercicio(40)==null)
             this.quemadura(db);
 
+
+
         //Let's first set up toolbar
         setupToolbar();
 
@@ -43,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
         navTitles = getResources().getStringArray(R.array.navDrawerItems);
         navIcons = getResources().obtainTypedArray(R.array.navDrawerIcons);
 
-        
+
         /**
         *Here , pass the titles and icons array to the adapter .
         *Additionally , pass the context of 'this' activity .
         *So that , later we can use the fragmentManager of this activity to add/replace fragments.
         */
 
-        recyclerViewAdapter = new RecyclerViewAdapter(navTitles,navIcons,this,toolbar);
+        recyclerViewAdapter = new RecyclerViewAdapter(navTitles,navIcons,this,toolbar,db);
         recyclerView.setAdapter(recyclerViewAdapter);
 
         /**
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void quemadura(DBHandler db)
+    public void quemadura(DBHandler db)
     {
         Log.d("Insert","insertando");
         db.addExcersice(new Exercise

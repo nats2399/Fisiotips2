@@ -2,6 +2,7 @@ package com.androidbelieve.materialnavigationdrawer;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
@@ -17,14 +18,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     TypedArray icons;
     Context context;
     Toolbar toolbar;
+    DBHandler db;
 
    // The default constructor to receive titles,icons and context from MainActivity.
-   RecyclerViewAdapter(String[] titles , TypedArray icons , Context context,Toolbar toolbar){
+   RecyclerViewAdapter(String[] titles , TypedArray icons , Context context,Toolbar toolbar,DBHandler db){
 
             this.titles = titles;
             this.icons = icons;
             this.context = context;
             this.toolbar = toolbar;
+            this.db = db;
     }
 
    /**
@@ -89,6 +92,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 case 3:
                     Fragment rdf = new RutinaFragment();
                     fragmentTransaction.replace(R.id.containerView,rdf);
+                    Bundle bundle = new Bundle();
                     fragmentTransaction.commit();
                     toolbar.setTitle("Rutina Diaria");
                     break;
