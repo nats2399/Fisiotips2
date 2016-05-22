@@ -11,6 +11,15 @@
 
     </string-array>
 
+    <string-array name="navDrawerDias">
+        <item>Dia 1</item>
+        <item>Dia 2</item>
+        <item>Dia 3</item>
+        <item>Dia 4</item>
+        <item>Dia 5</item>
+
+    </string-array>
+
     <string-array name="navDrawerIcons">
 
         <item>@drawable/slide1</item>
@@ -18,6 +27,16 @@
         <item>@drawable/slide3</item>
         <item>@drawable/slide4</item>
         <item>@drawable/slide5</item>
+
+    </string-array>
+
+    <string-array name="navDrawerDiasIcons">
+
+        <item>@drawable/dia1</item>
+        <item>@drawable/dia2</item>
+        <item>@drawable/dia3</item>
+        <item>@drawable/dia4</item>
+        <item>@drawable/dia5</item>
 
     </string-array>
 
@@ -38,6 +57,10 @@
     <string name="text5">Día 4</string>
     <string name="text6">Día 5</string>
     <string name="diatexto">10-20 repeticiones</string>
+    <string name="title_activity_dia">dia</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
 </resources>

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 /**
@@ -14,7 +15,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     private static DBHandler db;
-    private static Context con;
+    static Context con;
+    static AppCompatActivity maAc;
     // Database Version
     private static final int DATABASE_VERSION = 1;
     // Database Name
@@ -42,6 +44,8 @@ public class DBHandler extends SQLiteOpenHelper {
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.con = context;
+        //maAc = (AppCompatActivity) context.getApplicationContext();
+
     }
 
     @Override
