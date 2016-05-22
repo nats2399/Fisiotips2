@@ -1,20 +1,23 @@
 package com.androidbelieve.materialnavigationdrawer;
 
+import android.graphics.Matrix;
 import android.net.Uri;
-import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
+import android.widget.ImageView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public class intro1 extends AppCompatActivity {
+public class estiramientoimagen extends AppCompatActivity {
 
+    ScaleGestureDetector SGD;
+    ImageView img;
+    Matrix matrix;
+    Float scale = 1f;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -24,26 +27,39 @@ public class intro1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro1);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        toolBarLayout.setTitle("Programa");
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Bienvenido", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        setContentView(R.layout.activity_estiramientoimagen);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+        img = (ImageView) findViewById(R.id.imageViewestira);
+        matrix = new Matrix();
+        SGD = new ScaleGestureDetector(this, new ScaleListener());
+
+    }
+
+
+
+    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener
+    {
+        public boolean onScale(ScaleGestureDetector detector)
+        {
+            scale = scale * detector.getScaleFactor();
+            scale = Math.max(0.1f,Math.min(scale,5f));
+            matrix.setScale(scale,scale);
+            img.setImageMatrix(matrix);
+            return true;
+        }
     }
 
     @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        SGD.onTouchEvent(event);
+        return true;
+    }
+
+
     public void onStart() {
         super.onStart();
 
@@ -52,7 +68,7 @@ public class intro1 extends AppCompatActivity {
         client.connect();
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
-                "intro1 Page", // TODO: Define a title for the content shown.
+                "estiramientoimagen Page", // TODO: Define a title for the content shown.
                 // TODO: If you have web page content that matches this app activity's content,
                 // make sure this auto-generated web page URL is correct.
                 // Otherwise, set the URL to null.
@@ -63,6 +79,7 @@ public class intro1 extends AppCompatActivity {
         AppIndex.AppIndexApi.start(client, viewAction);
     }
 
+
     @Override
     public void onStop() {
         super.onStop();
@@ -71,7 +88,7 @@ public class intro1 extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
-                "intro1 Page", // TODO: Define a title for the content shown.
+                "estiramientoimagen Page", // TODO: Define a title for the content shown.
                 // TODO: If you have web page content that matches this app activity's content,
                 // make sure this auto-generated web page URL is correct.
                 // Otherwise, set the URL to null.
