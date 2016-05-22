@@ -5,9 +5,32 @@
     tools:context="com.androidbelieve.materialnavigationdrawer.AgradecimientosFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/agradecimientotitle"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="80dp" />
+
+    <ScrollView
+        android:layout_width="346dp"
+        android:layout_height="468dp"
+        android:id="@+id/scrollView2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="120dp">
+
+        <TextView
+            android:layout_width="322dp"
+            android:layout_height="434dp"
+            android:text="@string/agradecimientotext"
+            android:id="@+id/textView4"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="300dp" />
+    </ScrollView>
+
 
 </FrameLayout>
