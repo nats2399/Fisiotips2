@@ -69,6 +69,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             mainActivity.drawerLayout.closeDrawers();
             FragmentTransaction fragmentTransaction = mainActivity.getSupportFragmentManager().beginTransaction();
 
+            final DBHandler db = mainActivity.db;
+
             switch (getPosition()){
                 case 1:
                     //Fragment squadFragment = new SquadFragment();

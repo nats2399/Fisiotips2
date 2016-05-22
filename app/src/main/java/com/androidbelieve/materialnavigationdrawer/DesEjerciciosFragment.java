@@ -33,16 +33,11 @@ public class DesEjerciciosFragment extends Fragment {
         tvTip.setText(tip);
 
 
-
         ImageView imageVw = (ImageView) view.findViewById(R.id.imageEx);
-
-
 
 
         return inflater.inflate(R.layout.fragment_welcome,null);
 
     }
-
-
 
 }
