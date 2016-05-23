@@ -153,6 +153,15 @@
 
     </string-array>
 
+    <string-array name="navDrawerDias">
+        <item>Dia 1</item>
+        <item>Dia 2</item>
+        <item>Dia 3</item>
+        <item>Dia 4</item>
+        <item>Dia 5</item>
+
+    </string-array>
+
 
 </resources>
 
