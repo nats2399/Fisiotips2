@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
@@ -16,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapterDias extends RecyclerView.Adapter<RecyclerViewAdapterDias.ViewHolder> {
     String[] titles;
     TypedArray icons;
     Context context;
@@ -24,7 +23,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     DBHandler db;
 
    // The default constructor to receive titles,icons and context from MainActivity.
-   RecyclerViewAdapter(String[] titles , TypedArray icons , Context context,Toolbar toolbar,DBHandler db){
+   RecyclerViewAdapterDias(String[] titles , TypedArray icons , Context context, Toolbar toolbar, DBHandler db){
 
             this.titles = titles;
             this.icons = icons;
@@ -71,50 +70,57 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         @Override
         public void onClick(View v) {
 
-            MainActivity mainActivity = (MainActivity)context;
-            mainActivity.drawerLayout.closeDrawers();
-            FragmentTransaction fragmentTransaction = mainActivity.getSupportFragmentManager().beginTransaction();
+            DiaActivity diaActivity = (DiaActivity)context;
+            diaActivity.drawerLayout.closeDrawers();
+            FragmentTransaction fragmentTransaction = diaActivity.getSupportFragmentManager().beginTransaction();
 
-            final DBHandler db = mainActivity.db;
+            Fragment wf = new DayFragment();
+            //Fragment introFragment = new IntroFragment();
+            fragmentTransaction.replace(R.id.containerView,wf);
+            fragmentTransaction.commit();
+            int rnd1,rnd2,rnd3,rnd4,rnd5;
 
             switch (getPosition()){
+
                 case 1:
-                    //Fragment squadFragment = new SquadFragment();
-                    Fragment wf = new WelcomeFragment();
-                    //Fragment introFragment = new IntroFragment();
-                    fragmentTransaction.replace(R.id.containerView,wf);
-                    fragmentTransaction.commit();
-                    toolbar.setTitle("Bienvenido");
+                    /*
+                    Exercise ejercicio = db.traeEjercicio(rnd1);
+                    String toString = ejercicio.toString();
+                    i.putExtra("toString",toString);
+                    i.putExtra("Dia","1");*/
+                    toolbar.setTitle("Día 1");
                     break;
                 case 2:
-                    Fragment iff = new IntroFragment();
-                    fragmentTransaction.replace(R.id.containerView,iff);
-                    fragmentTransaction.commit();
-                    toolbar.setTitle("Introducción");
+                    /*Exercise ejercicio2 = db.traeEjercicio(rnd2);
+                    String toString2 = ejercicio2.toString();
+                    i.putExtra("toString",toString2);
+                    i.putExtra("Dia","2");*/
+                    toolbar.setTitle("Día 2");
                     break;
                 case 3:
-                    Fragment rdf = new RutinaFragment();
-                    fragmentTransaction.replace(R.id.containerView,rdf);
-                    Bundle bundle = new Bundle();
-                    fragmentTransaction.commit();
-                    toolbar.setTitle("Rutina Diaria");
+                    /*Exercise ejercicio3 = db.traeEjercicio(rnd3);
+                    String toString3 = ejercicio3.toString();
+                    i.putExtra("toString",toString3);
+                    i.putExtra("Dia","3");*/
+                    toolbar.setTitle("Día 3");
                     break;
                 case 4:
-                    Intent myIntent = new Intent(context, DiaActivity.class);
-                    context.startActivity(myIntent);
+                    /*Exercise ejercicio4 = db.traeEjercicio(rnd4);
+                    String toString4 = ejercicio4.toString();
+                    i.putExtra("toString",toString4);
+                    i.putExtra("Dia","4");*/
+                    toolbar.setTitle("Día 4");
                     break;
                 case 5:
-                    Fragment af = new AgradecimientosFragment();
-                    fragmentTransaction.replace(R.id.containerView,af);
-                    fragmentTransaction.commit();
-                    toolbar.setTitle("Agradecimientos");
+                    /*Exercise ejercicio5 = db.traeEjercicio(rnd5);
+                    String toString5 = ejercicio5.toString();
+                    i.putExtra("toString",toString5);
+                    i.putExtra("Dia","5");*/
+                    toolbar.setTitle("Día 5");
                     break;
-                case R.id.button7:
-                    Log.d("Botón","3");
-                    break;
-
-
             }
+
+            //context.startActivity(i);
         }
     }
 
@@ -124,7 +130,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     */
 
     @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerViewAdapterDias.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -149,7 +155,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     */
 
     @Override
-    public void onBindViewHolder(RecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerViewAdapterDias.ViewHolder holder, int position) {
 
         if(position!=0){
             holder.navTitle.setText(titles[position - 1]);

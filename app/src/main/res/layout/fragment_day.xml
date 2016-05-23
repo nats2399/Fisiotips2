@@ -10,23 +10,26 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:background="#ffffff">
+        android:background="#ffffff"
+        android:layout_marginLeft="-30dp">
 
 
         <TableLayout
-            android:layout_width="343dp"
+            android:layout_width="wrap_content"
             android:layout_height="526dp"
-            android:layout_gravity="center_horizontal|top">
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginLeft="17dp">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Ejercicio1"
                     android:id="@+id/Ejercicio1"
-                    android:layout_column="1" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="22sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -34,31 +37,32 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Ejercicio2"
                     android:id="@+id/Ejercicio2"
-                    android:layout_column="3"
+                    android:layout_column="2"
                     android:layout_marginLeft="10dp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <ImageView android:id="@+id/ejercicio1img"
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton"
                     android:layout_column="1"
                     android:src="@mipmap/defaultimg" />
 
-                <ImageView
+                <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ejercicio2img"
-                    android:src="@mipmap/defaultimg"
-                    android:layout_column="3"
-                    android:layout_marginLeft="10dp" />
+                    android:id="@+id/imageButton2"
+                    android:layout_column="2"
+                    android:src="@mipmap/defaultimg" />
+
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+            <TableRow>
                 <TextView
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Ejercicio3"
@@ -72,26 +76,29 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Ejercicio4"
                     android:id="@+id/Ejercicio4"
-                    android:layout_column="3"
+                    android:layout_column="2"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <ImageView android:id="@+id/ejercicio3img"
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton3"
                     android:layout_column="1"
                     android:src="@mipmap/defaultimg" />
 
-                <ImageView
+                <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ejercicio4img"
-                    android:src="@mipmap/defaultimg"
-                    android:layout_column="3"
-                    android:layout_marginLeft="10dp" />
+                    android:id="@+id/imageButton4"
+                    android:layout_column="2"
+                    android:src="@mipmap/defaultimg" />
             </TableRow>
 
             <TableRow

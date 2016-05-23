@@ -1,18 +1,20 @@
 package com.androidbelieve.materialnavigationdrawer;
+
 import android.content.res.TypedArray;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 
 
-public class MainActivity extends AppCompatActivity {
+public class DiaActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     DrawerLayout drawerLayout;
@@ -22,11 +24,12 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter recyclerViewAdapter;
     ActionBarDrawerToggle drawerToggle;
     DBHandler db;
+    private static DiaActivity instance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_day);
 
         db = new DBHandler(this);
         if(db.traeEjercicio(40)==null)
@@ -42,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerMainActivity);
 
         //Setup Titles and Icons of Navigation Drawer
-        navTitles = getResources().getStringArray(R.array.navDrawerItems);
-        navIcons = getResources().obtainTypedArray(R.array.navDrawerIcons);
+        navTitles = getResources().getStringArray(R.array.navDrawerDias);
+        navIcons = getResources().obtainTypedArray(R.array.navDrawerDiasIcons);
 
 
         /**
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         *So that , later we can use the fragmentManager of this activity to add/replace fragments.
         */
 
-        recyclerViewAdapter = new RecyclerViewAdapter(navTitles,navIcons,this,toolbar,db);
+        recyclerViewAdapter = new RecyclerViewAdapterDias(navTitles,navIcons,this,toolbar,db);
         recyclerView.setAdapter(recyclerViewAdapter);
 
         /**
@@ -78,6 +81,13 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
 
+    }
+
+    public static synchronized DiaActivity getsetting() {
+        if (instance == null) {
+            instance = new DiaActivity();
+        }
+        return instance;
     }
 
     public void quemadura(DBHandler db)
@@ -144,5 +154,17 @@ public class MainActivity extends AppCompatActivity {
         //This is necessary to change the icon of the Drawer Toggle upon state change.
         drawerToggle.syncState();
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 /**
@@ -12,6 +13,10 @@ import android.util.Log;
  */
 public class DBHandler extends SQLiteOpenHelper {
 
+
+    private static DBHandler db;
+    static Context con;
+    static AppCompatActivity maAc;
     // Database Version
     private static final int DATABASE_VERSION = 1;
     // Database Name
@@ -25,8 +30,22 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_TIP = "tip";
     private static final String KEY_IMG = "img";
 
+    public static synchronized DBHandler getInstance() {
+
+        // Use the application context, which will ensure that you
+        // don't accidentally leak an Activity's context.
+        // See this article for more information: http://bit.ly/6LRzfx
+        if (db == null) {
+            db = new DBHandler(con.getApplicationContext());
+        }
+        return db;
+    }
+
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.con = context;
+        //maAc = (AppCompatActivity) context.getApplicationContext();
+
     }
 
     @Override
