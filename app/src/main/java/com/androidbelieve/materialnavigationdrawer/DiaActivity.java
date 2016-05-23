@@ -24,6 +24,7 @@ public class DiaActivity extends AppCompatActivity {
     RecyclerView.Adapter recyclerViewAdapter;
     ActionBarDrawerToggle drawerToggle;
     DBHandler db;
+    private static DiaActivity instance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -80,6 +81,13 @@ public class DiaActivity extends AppCompatActivity {
         fragmentTransaction.commit();
 
 
+    }
+
+    public static synchronized DiaActivity getsetting() {
+        if (instance == null) {
+            instance = new DiaActivity();
+        }
+        return instance;
     }
 
     public void quemadura(DBHandler db)
@@ -146,13 +154,17 @@ public class DiaActivity extends AppCompatActivity {
         //This is necessary to change the icon of the Drawer Toggle upon state change.
         drawerToggle.syncState();
     }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if ((keyCode == KeyEvent.KEYCODE_BACK))
         {
+
             finish();
         }
         return super.onKeyDown(keyCode, event);
     }
+
+
 }

@@ -17,7 +17,6 @@ public class WelcomeFragment extends android.support.v4.app.Fragment {
     {
         final View view = inflater.inflate(R.layout.fragment_welcome, container, false);
         TextView tv = (TextView) view.findViewById(R.id.textView2);
-
         int height_in_pixels = tv.getLineCount() * tv.getLineHeight(); //approx height text
         tv.setHeight(height_in_pixels);
 

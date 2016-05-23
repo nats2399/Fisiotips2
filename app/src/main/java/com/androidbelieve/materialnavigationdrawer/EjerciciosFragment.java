@@ -25,7 +25,10 @@ public class EjerciciosFragment extends android.support.v4.app.Fragment implemen
         d1 = (Button) myView.findViewById(R.id.button5);
         d1.setOnClickListener(this);
 
-        d2 = (Button) myView.findViewById(R.id.button6);
+        Bundle bundle = getArguments();
+        int id = bundle.getInt("id");
+        Log.d("id",String.valueOf(id));
+        /*d2 = (Button) myView.findViewById(R.id.button6);
         d2.setOnClickListener(this);
 
         d3 = (Button) myView.findViewById(R.id.button7);
@@ -35,7 +38,7 @@ public class EjerciciosFragment extends android.support.v4.app.Fragment implemen
         d4.setOnClickListener(this);
 
         d5 = (Button) myView.findViewById(R.id.button9);
-        d5.setOnClickListener(this);
+        d5.setOnClickListener(this);*/
         return myView;
     }
 
@@ -46,8 +49,11 @@ public class EjerciciosFragment extends android.support.v4.app.Fragment implemen
         switch (v.getId())
         {
             case R.id.button5:
-                Intent myIntent = new Intent(db.con, DiaActivity.class);
-                startActivity(myIntent);
+                Fragment someFragment = new DayFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.containerView, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
                 break;
 
             case R.id.button6:

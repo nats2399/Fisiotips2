@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -18,37 +21,42 @@ import java.util.Random;
 
 public class DayFragment extends android.support.v4.app.Fragment implements View.OnClickListener{
 
-    ImageButton d1,d2,d3,d4,d5;
-    int rnd1, rnd2, rnd3, rnd4, rnd5;
+    ImageButton d1,d2,d3,d4;
+    int rnd1 = 0, rnd2 = 0, rnd3 = 0, rnd4 = 0;
+    TextView tv1, tv2, tv3, tv4;
+    Exercise ex1, ex2, ex3, ex4;
+    DBHandler db;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        Log.d("entré", "frag");
-        Random r = new Random();
-        rnd1 = (r.nextInt(41 - 1) + 1);
+        final View fragmentView = inflater.inflate(R.layout.fragment_day,
+                container, false);
+        db = DBHandler.getInstance();
+        if(rnd1 == 0 || rnd2 == 0 || rnd3 == 0 || rnd4 == 0)
+        {
+            Random r = new Random();
+            rnd1 = (r.nextInt(41 - 1) + 1);
 
-        do {
-            rnd2 = (r.nextInt(41 - 1) + 1);
-        }
-        while (rnd1 == rnd2);
+            do {
+                rnd2 = (r.nextInt(41 - 1) + 1);
+            }
+            while (rnd1 == rnd2);
 
-        do {
-            Log.d("entré", "wh2");
-            rnd3 = (r.nextInt(41 - 1) + 1);
-        }
-        while (rnd3 == rnd2 || rnd3 == rnd1);
+            do {
 
-        do {
-            Log.d("entré", "wh3");
-            rnd4 = (r.nextInt(41 - 1) + 1);
-        }
-        while (rnd4 == rnd2 || rnd4 == rnd1 || rnd4 == rnd3);
+                rnd3 = (r.nextInt(41 - 1) + 1);
+            }
+            while (rnd3 == rnd2 || rnd3 == rnd1);
 
-        do {
-            Log.d("entré", "wh4");
-            rnd5 = (r.nextInt(41 - 1) + 1);
+            do {
+
+                rnd4 = (r.nextInt(41 - 1) + 1);
+            }
+            while (rnd4 == rnd2 || rnd4 == rnd1 || rnd4 == rnd3);
         }
-        while (rnd5 == rnd2 || rnd5 == rnd1 || rnd5 == rnd3 || rnd5 == rnd4);
+        this.chageText();
+
+        //tv1.setText(ex1.getNombre());
         /*Log.d(String.valueOf(rnd1),String.valueOf(rnd2));
         Log.d(String.valueOf(rnd3),String.valueOf(rnd4));
         Log.d(String.valueOf(rnd5),"fin");
@@ -59,8 +67,7 @@ public class DayFragment extends android.support.v4.app.Fragment implements View
         i.putExtra("Dia","1");
         startActivity(i);*/
 
-        final View fragmentView = inflater.inflate(R.layout.fragment_day,
-                container, false);
+
 
         d1 = (ImageButton) fragmentView.findViewById(R.id.imageButton);
         d1.setOnClickListener(new View.OnClickListener() {
@@ -70,15 +77,70 @@ public class DayFragment extends android.support.v4.app.Fragment implements View
                 // so that findViewById can be used to get a handle on
                 // the fragments own views.
 
-                Intent i = new Intent(v.getContext(),DesEjercicio_Activity.class);
-                //Exercise ejercicio = db.traeEjercicio(rnd1);
-                /*String toString = ejercicio.toString();
-                i.putExtra("toString",toString);
-                i.putExtra("Dia","1");*/
-                startActivity(i);
+                Fragment someFragment = new EjerciciosFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("id",rnd1);
+                someFragment.setArguments(bundle);
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.containerView, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+            }
+        });
+        d2 = (ImageButton) fragmentView.findViewById(R.id.imageButton2);
+        d2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                // Pass the fragmentView through to the handler
+                // so that findViewById can be used to get a handle on
+                // the fragments own views.
+
+                Fragment someFragment = new EjerciciosFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.containerView, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+            }
+        });
+
+        d3 = (ImageButton) fragmentView.findViewById(R.id.imageButton3);
+        d3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                // Pass the fragmentView through to the handler
+                // so that findViewById can be used to get a handle on
+                // the fragments own views.
+
+                Fragment someFragment = new EjerciciosFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.containerView, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+            }
+        });
+
+        d4 = (ImageButton) fragmentView.findViewById(R.id.imageButton3);
+        d4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                // Pass the fragmentView through to the handler
+                // so that findViewById can be used to get a handle on
+                // the fragments own views.
+
+                Fragment someFragment = new EjerciciosFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.containerView, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+
             }
         });
         return fragmentView;
+    }
+
+    private void chageText() {
+        ex1 = db.traeEjercicio(rnd1);
+        tv1 = (TextView) getView().findViewById(R.id.Ejercicio1);
     }
 
     @Override
