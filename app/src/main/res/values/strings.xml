@@ -36,16 +36,6 @@
     </string-array>
 
 
-    <string-array name="navDrawerDiasIcons">
-
-        <item>@drawable/dia1</item>
-        <item>@drawable/dia2</item>
-        <item>@drawable/dia3</item>
-        <item>@drawable/dia4</item>
-        <item>@drawable/dia5</item>
-
-    </string-array>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -64,5 +54,109 @@
     <string name="text6">Día 5</string>
     <string name="diatexto">10-20 repeticiones</string>
 
+    <string name="desarrollo">
+        "¿CÓMO DESARROLLAR ESTE PROGRAMA?.\n\n\n"
+
+        1. Establece un límite de tiempo diario en el cual desarrollarás las actividades, de manera que trates de cumplirlas todos los días. \n\n
+        2. Organiza todos los materiales que usarás para la práctica (colchonetas, sillas, mancuernas, balones, etc.)\n\n
+        3. Estira un poco para soltar tu cuerpo y no tener luego complicaciones.\n\n
+        4. Calienta. \n\n
+        5. Inicia con los ejercicios teniendo muy en cuenta la descripción que se da para desarrollarlo. No esfuerces tu cuerpo más allá de lo que él puede hacer, podrías generarte una lesión. Date tiempo, tu cuerpo se irá adaptando y con el tiempo rendirás mejor.\n\n
+        6. Lee los tips que te ofrecemos en cada sección, así mientras te ejercitas, podrás ir integrando la actividad con el conocimiento.\n\n
+        7. Cumple con las pausas que te damos entre cada repetición, esto te servirá para mantener la intensidad del ejercicio sin forzar demasiado tu cuerpo.\n\n
+        8. Hidrátate constantemente pues esto ayudará a tu cuerpo a reponer la cantidad de electrolitos perdidos, a la vez que mejoras tu resistencia a las diferentes actividades. Recuerda que también es vital respirar adecuadamente, así evitarás mareos o desmayos, hazlo del siguiente modo: \n
+        Cuando esté relajado el cuerpo inspira y amplía el diámetro del pecho dejando entrar abundante aire a tus pulmones. \n
+        Cuando realices la contracción o la fuerza en el ejercicio respira y libera el aire, luego regresa a posición inicial mientras vas inhalando. \n\n
+        9. Estira de nuevo, de manera que sientas que tus músculos liberan la tensión contenida, así será mejor la recuperación tras el ejercicio y será más benéfica la actividad realizada. \n\n
+        10. Diviértete y aprende mucho. \n\n
+    </string>
+
+
+    <string name="variaciones">
+        "Variaciones de los Ejercicios.\n\n"
+
+        "A continuación encontrarás varios ejercicios que necesitan de diferentes materiales, como bandas elásticas, mancuernas, balones, sillas especiales, entre otros. Aquí te damos las variaciones que puedes usar si no tienes esto:\n\n"
+        "    A. Balón medicinal: puedes usar alguno de fútbol, baloncesto o cualquier objeto duro que sirva para que hagas presión entre las extremidades.\n"
+        "    B. Bandas elásticas: no tienes que comprar unas, basta con tomar una bufanda vieja que ya no uses y pueda acoplarse a la necesidad del ejercicio, o con una cuerda, puedes adaptarla cortando algunas partes hasta que llegue al punto donde te sirva para hacer la fuerza.\n"
+        "    C. Mancuernas: sabemos que esto puede resultar costoso, pero llenando botellas de un litro (que puedes consumir después), o con algún objeto de un peso moderado para tí puedes realizar los ejercicios sin mayor complicación. Importante: no excedas la cantidad de peso que puedes soportar.\n"
+        "    D. Sillas especiales: basta con tomar tu cama, el sillón de la sala o las sillas del comedor, donde tú te sientas más cómodo y obtengas la estabilidad ideal para el ejercicio.\n\n""
+
+        "Recuerda, no es necesario gastar mucho para ejercitarte, tan solo adaptar lo que ya tienes y empezar a divertirte. Si quieres conocer más variaciones estaremos publicando en nuestra página:\n\n
+        http://unisabanaingles07.wix.com/fisiotips5\n\n
+        o puedes buscar en internet.\n\n"
+
+    </string>
+    <string name="title_activity_calentamiento">calentamiento</string>
+    <string name="calentamiento">
+            Calentamiento \n\n
+            Para calentar realiza principalmente ejercicios de tipo aeróbico, como:\n\n\n
+
+            1. Trote leve.\n\n
+            2. Correr a una velocidad moderada que te permite hablar así sabrás que no te has excedido.\n\n
+            3. Caminar.\n\n
+            4. Hacer un a sesión de zumba de no más de 5 minutos (puedes conseguirla en youtube, todas son muy divertidas).\n\n
+            5. Saltar la cuerda.\n\n
+            6. Saltar mientras llevas las rodillas a tu pecho.\n\n\n
+
+        Luego de hacer esto hidrátate, respira y comienza con los ejercicios de fuerza.\n\n
+
+    </string>
+    <string name="title_activity_estiramientos">estiramientos</string>
+    <string name="large_text">
+        "Estiramientos\n\n"
+
+        "Los estiramientos sirven para unificar la mente, el cuerpo y el espíritu, pues exigen tu concentración al máximo y que te mantengas positivo para poderlos realizar. \n
+        Un estiramiento adecuado ayuda a reducir el estrés considerablemente al disminuir la tensión de los músculos y ayudarte a abrir el pecho y respirar mejor.\n
+        Ayuda a mantener una concentración óptima de energía durante el ejercicio a lo largo del día, ya que baja considerablemente la contracción excesiva de los músculos y deja más ATP libre para el cuerpo, a la vez que mejora la circulación, al disminuir la resistencia.\n
+        Un programa de estiramiento bien realizado, te ayuda a conocer mejor tu cuerpo y tus capacidades al momento de entrenar, con ello puedes prevenir múltiples lesiones.\n
+        Estirar mejora tu rendimiento en los diferentes ejercicios, así los desarrollas mejor y evitas molestias musculares.\n\n
+
+
+        Sigue la siguiente imagen que adidas ofrece para que tengas un estiramiento óptimo, además de ser muy sencillo de hacer.\n\n"
+    </string>
+
+
+
+
+
+    <string name="agradecimientotitle">Agradecimiento</string>
+
+    <string name="agradecimientotext">
+        Agradecemos la colaboración de:\n\n
+
+        NyN por su esfuerzo en la realización de ésta plantilla de una App para Fisiotips, de la cual esperamos que puedan salir grandes ideas, o que en un futuro pueda hacerse completamente funcional y así poderla extender al cuerpo de estudiantes de la Universidad de La Sabana.\n\n
+
+        Docentes del departamento de morfofisiología de la Universidad de La Sabana, en especial al doctor Wilson Andrés Parra Chico por su ayuda. Gracias introducirnos al maravilloso mundo de la fisiología y por motivarnos expandir nuestro conocimiento, promoviendo la integración de lo que vemos a diario y no quedarnos nunca con información superflua, esperamos poder aplicar todo esto de manera óptima en los pacientes que en un futuro veremos.\n\n
+
+        A nuestra docente del área de telemática Angélica Milena Ramirez Bustamante, por creer desde un inicio en nuestro proyecto y tener tanto interés en su realización, esperamos que todo su esfuerzo pueda verse remunerado con la entrega de este producto final.\n\n
+
+        Al equipo de trabajo involucrado en la creación de Fisiotips, una idea que nació en las aulas de clase y pretende resolver una de las problemáticas más grandes del cuerpo estudiantil: el sedentarismo:\n\n
+
+            - Juan Ignacio Guerrero Ospina \n
+            - Juan Manuel Pava \n
+            - Jesús Rubiano \n
+            - María Juliana Rodríguez Prada \n\n
+
+    </string>
+
+
+    <string name="title_activity_intro1">Programa</string>
+    <string name="title_activity_intro2">Variaciones</string>
+
+    <string-array name="navDrawerDiasIcons">
+
+        <item>@drawable/dia1</item>
+        <item>@drawable/dia2</item>
+        <item>@drawable/dia3</item>
+        <item>@drawable/dia4</item>
+        <item>@drawable/dia5</item>
+
+    </string-array>
+
 
 </resources>
+
+
+
+
+
