@@ -2,6 +2,8 @@
     <string name="app_name">Fisiotips</string>
     <string name="action_settings">Settings</string>
 
+    <string name="eje1">Settings</string>
+
     <string-array name="navDrawerItems">
         <item>Bienvenidos</item>
         <item>Introducción</item>
@@ -52,7 +54,7 @@
     <string name="text4">Día 3</string>
     <string name="text5">Día 4</string>
     <string name="text6">Día 5</string>
-    <string name="diatexto">10-20 repeticiones</string>
+    <string name="diatexto">10-20 repeticiones \n 1 minuto de descanso entre cada repetición</string>
 
     <string name="desarrollo">
         "¿CÓMO DESARROLLAR ESTE PROGRAMA?.\n\n\n"
@@ -152,6 +154,9 @@
         <item>@drawable/dia5</item>
 
     </string-array>
+
+    <string-array name="navDrawerDias"> <item>Dia 1</item> <item>Dia 2</item> <item>Dia 3</item> <item>Dia 4</item> <item>Dia 5</item> </string-array>
+
 
 
 </resources>
